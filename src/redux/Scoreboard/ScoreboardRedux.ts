@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: Array<number> = [];
 
@@ -14,6 +14,6 @@ const scoreboardSlice = createSlice({
   },
 });
 
-export const {setRecord} = scoreboardSlice.actions;
+export const { setRecord } = scoreboardSlice.actions;
 
 export default scoreboardSlice.reducer;

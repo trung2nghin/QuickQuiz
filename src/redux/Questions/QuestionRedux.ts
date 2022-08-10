@@ -19,6 +19,8 @@ const questionSlice = createSlice({
   initialState: initialState,
   reducers: {
     getQuestion() {},
+    getMediumQuestion() {},
+    getHardQuestion() {},
     setQuestion(state, action) {
       const questionData = action.payload;
       return {...state, ...questionData};
@@ -26,6 +28,7 @@ const questionSlice = createSlice({
   },
 });
 
-export const {getQuestion, setQuestion} = questionSlice.actions;
+export const {getQuestion, getMediumQuestion, getHardQuestion, setQuestion} =
+  questionSlice.actions;
 
 export default questionSlice.reducer;

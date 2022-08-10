@@ -1,16 +1,22 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {FC, useCallback, useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {useNavigation} from '@react-navigation/native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React, { FC, useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 import FireBaseAuth from '@react-native-firebase/auth';
 
-import {Container} from '../../components';
+import { Container } from '../../components';
 import Card from '../components/Card';
-import {Metrics} from '../../assets';
-import {RootState} from '../../redux/store';
-import {MainStackParamList} from '../../navigation/MainStack';
-import {setUser, userInfo} from '../../redux/User/UserRedux';
+import { Metrics } from '../../assets';
+import { RootState } from '../../redux/store';
+import { MainStackParamList } from '../../navigation/MainStack';
+import { setUser, userInfo } from '../../redux/User/UserRedux';
 
 type HomeScreenProp = StackNavigationProp<MainStackParamList, 'HOME'>;
 
@@ -50,7 +56,7 @@ const ProfileScreen: FC = () => {
     }
   }, []);
 
-  const renderItem = ({item, index}: {item: string; index: number}) => (
+  const renderItem = ({ item, index }: { item: string; index: number }) => (
     <>
       {score.length < 8 ? (
         <View style={styles.viewItem}>
@@ -73,7 +79,7 @@ const ProfileScreen: FC = () => {
           borderR={6}>
           <View style={styles.viewCard}>
             <Text style={styles.txtTitleQuiz}>Scoreboard history</Text>
-            <View style={[styles.viewItem, {width: '82%'}]}>
+            <View style={[styles.viewItem, { width: '82%' }]}>
               <Text style={styles.txtBoard}>Rank</Text>
               <Text style={styles.txtBoard}>Player Name</Text>
               <Text style={styles.txtBoard}>Score</Text>
@@ -98,7 +104,7 @@ const ProfileScreen: FC = () => {
 export default ProfileScreen;
 
 const styles = StyleSheet.create({
-  viewMain: {marginHorizontal: 16, marginTop: 6},
+  viewMain: { marginHorizontal: 16, marginTop: 6 },
   viewCard: {
     width: '100%',
     marginTop: 24,
@@ -130,7 +136,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     padding: 12,
   },
-  txtBoard: {fontFamily: 'Roboto-Regular', fontSize: 16, color: '#FFFFFF'},
+  txtBoard: { fontFamily: 'Roboto-Regular', fontSize: 16, color: '#FFFFFF' },
   btnStart: {
     alignSelf: 'center',
     backgroundColor: '#000000',

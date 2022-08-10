@@ -1,6 +1,6 @@
-import {StyleSheet, View, StatusBarProps, StatusBar} from 'react-native';
-import React, {FC, memo} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { StyleSheet, View, StatusBarProps, StatusBar } from 'react-native';
+import React, { FC, memo } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Props {
   children: React.ReactNode;
@@ -28,13 +28,13 @@ const Container: FC<Props & StatusBarProps> = ({
     {header ? (
       <SafeAreaView
         edges={['right', 'left', 'top']}
-        style={{backgroundColor: statusBarColor || '#000000'}}>
+        style={{ backgroundColor: statusBarColor || '#000000' }}>
         {header}
       </SafeAreaView>
     ) : (
       <></>
     )}
-    <View style={[styles.container, {backgroundColor: bodyColor}]}>
+    <View style={[styles.container, { backgroundColor: bodyColor }]}>
       <SafeAreaView
         edges={header ? ['right', 'left'] : ['right', 'left', 'top']}
         style={styles.container}>

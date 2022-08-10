@@ -6,17 +6,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {FC, useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {useNavigation} from '@react-navigation/native';
+import React, { FC, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 
-import {Container} from '../../components';
+import { Container } from '../../components';
 import Card from '../components/Card';
-import {Metrics, Images} from '../../assets';
-import {getQuestion, questionInfo} from '../../redux/Questions/QuestionRedux';
-import {RootState} from '../../redux/store';
-import {MainStackParamList} from '../../navigation/MainStack';
+import { Metrics, Images } from '../../assets';
+import {
+  getMediumQuestion,
+  getHardQuestion,
+  getQuestion,
+} from '../../redux/Questions/QuestionRedux';
+import { RootState } from '../../redux/store';
+import { MainStackParamList } from '../../navigation/MainStack';
 
 type HomeScreenProp = StackNavigationProp<MainStackParamList, 'HOME'>;
 
@@ -30,6 +34,16 @@ const HomeScreen: FC = () => {
 
   const onGetQuestion = useCallback(() => {
     dispatch(getQuestion());
+    onNavGame();
+  }, [dispatch]);
+
+  const onGetMediumQuestion = useCallback(() => {
+    dispatch(getMediumQuestion());
+    onNavGame();
+  }, [dispatch]);
+
+  const onGetHardQuestion = useCallback(() => {
+    dispatch(getHardQuestion());
     onNavGame();
   }, [dispatch]);
 
@@ -74,7 +88,9 @@ const HomeScreen: FC = () => {
                 This game synthesizes medium questions for beginners, wishes you
                 a happy game.
               </Text>
-              <TouchableOpacity style={styles.btnStart} onPress={onGetQuestion}>
+              <TouchableOpacity
+                style={styles.btnStart}
+                onPress={onGetMediumQuestion}>
                 <Text style={styles.txtStart}>Start Quiz</Text>
               </TouchableOpacity>
             </View>
@@ -90,7 +106,9 @@ const HomeScreen: FC = () => {
                 This game synthesizes easy questions for pro players, wishes you
                 a happy game, and a relaxing moment.
               </Text>
-              <TouchableOpacity style={styles.btnStart} onPress={onGetQuestion}>
+              <TouchableOpacity
+                style={styles.btnStart}
+                onPress={onGetHardQuestion}>
                 <Text style={styles.txtStart}>Start Quiz</Text>
               </TouchableOpacity>
             </View>
@@ -130,7 +148,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  viewMain: {marginHorizontal: 16, marginTop: 24, marginBottom: 84},
+  viewMain: { marginHorizontal: 16, marginTop: 24, marginBottom: 84 },
   txtGuide: {
     color: '#FFFFFF',
     fontFamily: 'Roboto-Regular',

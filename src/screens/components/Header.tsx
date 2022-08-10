@@ -1,15 +1,15 @@
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import React, {FC, memo, useCallback} from 'react';
-import {HeaderBar} from '../../components';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React, { FC, memo, useCallback } from 'react';
+import { HeaderBar } from '../../components';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 interface Props {
   textIcon?: string;
   icon?: string;
 }
 
-const Header: FC<Props> = ({textIcon, icon}) => {
+const Header: FC<Props> = ({ textIcon, icon }) => {
   const navigation = useNavigation();
 
   const onNavGoBack = useCallback(() => {

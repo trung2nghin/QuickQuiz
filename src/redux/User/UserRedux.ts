@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export type userInfo = {
   displayName?: string | null;
@@ -27,6 +27,6 @@ const userSlice = createSlice({
   },
 });
 
-export const {getUser, setUser} = userSlice.actions;
+export const { getUser, setUser } = userSlice.actions;
 
 export default userSlice.reducer;
