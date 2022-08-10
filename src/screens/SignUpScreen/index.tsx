@@ -9,16 +9,16 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native';
-import React, {FC, useCallback, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
+import React, { FC, useCallback, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import FireBaseAuth from '@react-native-firebase/auth';
 
-import {Container} from '../../components';
-import {Header} from '../components/index';
-import {RootStackParamList} from '../../navigation/RootStack';
-import {useDispatch} from 'react-redux';
-import {setUser} from '../../redux/User/UserRedux';
+import { Container } from '../../components';
+import { Header } from '../components/index';
+import { RootStackParamList } from '../../navigation/RootStack';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../redux/User/UserRedux';
 
 type SignUpScreenProp = StackNavigationProp<RootStackParamList, 'SIGN_UP'>;
 
@@ -53,7 +53,7 @@ const SignUpScreen: FC = () => {
           refreshToken,
           uid: userAuth.uid,
         };
-        await dispatch(setUser({user}));
+        await dispatch(setUser({ user }));
         // console.log(user);
       } else {
         throw new Error("Can't login!!!");
@@ -108,7 +108,7 @@ const SignUpScreen: FC = () => {
                 <Text
                   style={[
                     styles.txtSignUp,
-                    {color: '#333333', fontWeight: 'bold'},
+                    { color: '#333333', fontWeight: 'bold' },
                   ]}>
                   Login
                 </Text>
@@ -124,7 +124,7 @@ const SignUpScreen: FC = () => {
 export default SignUpScreen;
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: { flex: 1 },
   viewContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#000000',
   },
-  btnForgotPassword: {alignSelf: 'flex-end', marginVertical: 14},
-  txtForgotPassword: {fontFamily: 'Roboto-Bold', fontSize: 16},
+  btnForgotPassword: { alignSelf: 'flex-end', marginVertical: 14 },
+  txtForgotPassword: { fontFamily: 'Roboto-Bold', fontSize: 16 },
   btnContinue: {
     height: 56,
     backgroundColor: '#000000',
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  btnSignUp: {justifyContent: 'center'},
+  btnSignUp: { justifyContent: 'center' },
   txtSignUp: {
     fontFamily: 'Roboto-Regular',
     fontSize: 18,

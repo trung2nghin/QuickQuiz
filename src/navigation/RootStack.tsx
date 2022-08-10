@@ -1,13 +1,13 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {useSelector} from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useSelector } from 'react-redux';
 
 import MainStack from './MainStack';
-import {GameScreen, LoginScreen, SignUpScreen} from '../screens';
-import {RootState} from '../redux/store';
-import {userInfo} from '../redux/User/UserRedux';
-import {useEffect, useState} from 'react';
+import { GameScreen, LoginScreen, SignUpScreen } from '../screens';
+import { RootState } from '../redux/store';
+import { userInfo } from '../redux/User/UserRedux';
+import { useEffect, useState } from 'react';
 
 export type RootStackParamList = {
   LOGIN: undefined;
@@ -35,12 +35,12 @@ const RootStack = () => {
             <Stack.Screen
               component={LoginScreen}
               name="LOGIN"
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               component={SignUpScreen}
               name="SIGN_UP"
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
             />
           </>
         ) : (
@@ -48,12 +48,12 @@ const RootStack = () => {
             <Stack.Screen
               component={MainStack}
               name="MAIN_STACK"
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               component={GameScreen}
               name="GAME"
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
             />
           </>
         )}

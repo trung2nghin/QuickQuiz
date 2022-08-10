@@ -1,5 +1,5 @@
-import {StyleSheet, View} from 'react-native';
-import React, {Children, FC} from 'react';
+import { StyleSheet, View } from 'react-native';
+import React, { Children, FC } from 'react';
 
 interface Props {
   height: number;
@@ -9,7 +9,7 @@ interface Props {
   jCenter?: boolean;
 }
 
-const Card: FC<Props> = ({height, children, bgColor, borderR, jCenter}) => {
+const Card: FC<Props> = ({ height, children, bgColor, borderR, jCenter }) => {
   return (
     <View
       style={[

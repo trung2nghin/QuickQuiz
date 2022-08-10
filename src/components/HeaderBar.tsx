@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {FC, memo} from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import React, { FC, memo } from 'react';
 import Metrics from '../assets/Metrics';
 
 interface Props {
@@ -9,9 +9,12 @@ interface Props {
   title?: React.ReactNode;
 }
 
-const HeaderBar: FC<Props> = ({backgroundColor, title, left, right}) => (
+const HeaderBar: FC<Props> = ({ backgroundColor, title, left, right }) => (
   <View
-    style={[styles.container, {backgroundColor: backgroundColor || '#000000'}]}>
+    style={[
+      styles.container,
+      { backgroundColor: backgroundColor || '#000000' },
+    ]}>
     {left || <View />}
     {title}
     {right || <View />}

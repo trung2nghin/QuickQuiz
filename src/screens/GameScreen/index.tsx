@@ -6,23 +6,23 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {FC, useCallback, useEffect, useRef, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useDispatch, useSelector } from 'react-redux';
 import CircularProgress, {
   ProgressRef,
 } from 'react-native-circular-progress-indicator';
 import TextTicker from 'react-native-text-ticker';
 
-import {Container} from '../../components';
+import { Container } from '../../components';
 import Card from '../components/Card';
-import {Metrics} from '../../assets';
-import {Header} from '../components';
-import {questionInfo} from '../../redux/Questions/QuestionRedux';
-import {RootState} from '../../redux/store';
-import {RootStackParamList} from '../../navigation/RootStack';
-import {setRecord} from '../../redux/Scoreboard/ScoreboardRedux';
+import { Metrics } from '../../assets';
+import { Header } from '../components';
+import { questionInfo } from '../../redux/Questions/QuestionRedux';
+import { RootState } from '../../redux/store';
+import { RootStackParamList } from '../../navigation/RootStack';
+import { setRecord } from '../../redux/Scoreboard/ScoreboardRedux';
 
 interface results {
   category?: string;
@@ -132,7 +132,7 @@ const GameScreen: FC = () => {
     navigation.goBack();
   }, [navigation, dispatch, totalScore, setTotalScore]);
 
-  const renderItem = ({item, index}: {item: string; index: number}) => (
+  const renderItem = ({ item, index }: { item: string; index: number }) => (
     <TouchableOpacity
       style={[
         styles.btnAnswer,
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     padding: 16,
   },
-  viewMain: {marginHorizontal: 16, height: Metrics.screen.height * 0.5},
+  viewMain: { marginHorizontal: 16, height: Metrics.screen.height * 0.5 },
   txtGuide: {
     color: '#FFFFFF',
     fontFamily: 'Roboto-Regular',
@@ -288,7 +288,7 @@ const styles = StyleSheet.create({
     minWidth: '95%',
     textAlign: 'center',
   },
-  loadingAnimation: {height: '100%', justifyContent: 'center'},
+  loadingAnimation: { height: '100%', justifyContent: 'center' },
   viewCard: {
     height: '90%',
     margin: 20,
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
   },
-  list: {width: '95%'},
+  list: { width: '95%' },
   btnNext: {
     backgroundColor: '#000000',
     justifyContent: 'center',

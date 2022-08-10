@@ -1,5 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit';
-import type {PayloadAction} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: boolean = false;
 
@@ -14,6 +14,6 @@ const loadingSlice = createSlice({
   },
 });
 
-export const {setLoading} = loadingSlice.actions;
+export const { setLoading } = loadingSlice.actions;
 
 export default loadingSlice.reducer;

@@ -1,9 +1,9 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import {persistStore, persistReducer} from 'redux-persist';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import createSagaMiddleware from 'redux-saga';
 
-import {watcherSaga} from './Questions/QuestionSaga';
+import { watcherSaga } from './Questions/QuestionSaga';
 import questionReducer from './Questions/QuestionRedux';
 import loadingReducer from './Loading/LoadingRedux';
 import userReducer from './User/UserRedux';

@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { StyleSheet, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {BlurView} from '@react-native-community/blur';
+import { BlurView } from '@react-native-community/blur';
 
-import {HomeScreen, ProfileScreen} from '../../screens';
-import {questionInfo} from '../../redux/Questions/QuestionRedux';
-import {Metrics} from '../../assets';
+import { HomeScreen, ProfileScreen } from '../../screens';
+import { questionInfo } from '../../redux/Questions/QuestionRedux';
+import { Metrics } from '../../assets';
 
 export type MainStackParamList = {
   HOME: undefined;
@@ -39,7 +39,7 @@ const MainStack = () => {
               />
             </View>
           ),
-          tabBarIcon: ({focused, size}) =>
+          tabBarIcon: ({ focused, size }) =>
             focused ? (
               <Ionicons name="game-controller" color={'#000000'} size={size} />
             ) : (
@@ -67,7 +67,7 @@ const MainStack = () => {
               />
             </View>
           ),
-          tabBarIcon: ({focused, size}) =>
+          tabBarIcon: ({ focused, size }) =>
             focused ? (
               <Ionicons name="person" color={'#000000'} size={size} />
             ) : (
